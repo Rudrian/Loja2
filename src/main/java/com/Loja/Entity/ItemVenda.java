@@ -17,21 +17,20 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "itemvenda")
 public class ItemVenda {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
-	private String nome;
-	
-	private int quantidade;
-	
-	private Double valor_unitario; 
-	
-	@ManyToOne
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String nome;
+    private int quantidade;
+    private Double valor_unitario;
+
+    @ManyToOne
     @JoinColumn(name = "produto_id")
     private Produto produtos;
+
+    @ManyToOne
     @JoinColumn(name = "venda_id")
     private Venda vendas;
-
 }
